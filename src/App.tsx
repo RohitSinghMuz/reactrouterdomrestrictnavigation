@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Home from './component/Home';
-import Dashboard from './component/Dashboard';
 import Login from './component/Login';
 import ProtectedRoute from './component/ProtectedRoute';
 
@@ -40,16 +39,7 @@ const App: React.FC = () => {
               />
             }
           />
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute
-                isAuthenticated={isAuthenticated}
-                authenticationPath="/login"
-                element={<Dashboard />}
-              />
-            }
-          />
+        
           <Route path="/login" element={<Login login={login} />} />
         </Routes>
       </div>
